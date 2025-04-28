@@ -1,0 +1,25 @@
+{
+  "name": "@hammim-in/react-native-places-autocomplete",
+  "version": "0.0.1",
+  "main": "dist/PlacesAutocomplete.js",
+  "types": "dist/PlacesAutocomplete.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "react-native",
+    "places",
+    "autocomplete",
+    "google-places"
+  ],
+  "author": "Ham Mim",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-native": "^0.72.8",
+    "typescript": "^5.8.3"
+  }
+}
