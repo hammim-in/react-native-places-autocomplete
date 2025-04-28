@@ -22,18 +22,15 @@ Built using Google Places API for fast location search with minimal setup.
 npm install @hammim-in/react-native-places-autocomplete
 # or
 yarn add @hammim-in/react-native-places-autocomplete
+```
 
 ## Usage
 
 ```javascript
-"use client";
-import React from 'react';
-import { View } from 'react-native';
 import PlacesAutocomplete from '@hammim-in/react-native-places-autocomplete';
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
       <PlacesAutocomplete
         query={{
           key: 'YOUR_GOOGLE_API_KEY', // Required
@@ -45,7 +42,6 @@ export default function App() {
           console.log('Selected Place:', data);
         }}
       />
-    </View>
   );
 }
 ```
