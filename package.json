@@ -1,10 +1,11 @@
 {
   "name": "@hammim-in/react-native-places-autocomplete",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "dist/PlacesAutocomplete.js",
   "types": "dist/PlacesAutocomplete.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish":"npm run build && npm publish --access public"
   },
   "keywords": [
     "react-native",
@@ -17,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://hammim-in@github.com/hammim-in/react-native-places-autocomplete.git.git"
+    "url": "git+https://github.com/hammim-in/react-native-places-autocomplete.git"
   },
   "author": "Ham Mim",
   "license": "MIT",

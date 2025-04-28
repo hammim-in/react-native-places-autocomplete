@@ -6,7 +6,6 @@ interface GooglePlacePrediction {
     id: string;
 }
 interface PlacesQuery {
-    apiKey: string;
     sessiontoken?: string;
     offset?: number;
     location?: string;
@@ -18,6 +17,7 @@ interface PlacesQuery {
 }
 interface PlacesAutocompleteProps {
     query: PlacesQuery;
+    apiKey: string;
     placeholder?: string;
     minLength?: number;
     debounce?: number;

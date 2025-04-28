@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import React, { useState, useRef } from 'react';
 import { View, TextInput, FlatList, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
-const PlacesAutocomplete = ({ query, placeholder = 'Search places...', minLength = 3, debounce = 500, onPlaceSelected, }) => {
+const PlacesAutocomplete = ({ query, apiKey, placeholder = 'Search places...', minLength = 3, debounce = 500, onPlaceSelected, }) => {
     const [inputText, setInputText] = useState('');
     const [predictions, setPredictions] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const PlacesAutocomplete = ({ query, placeholder = 'Search places...', minLength
                 .filter(key => params[key] !== undefined)
                 .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
                 .join('&');
-            const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?${queryString}`;
+            const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?${queryString}&key=${apiKey}`;
             const response = yield fetch(url);
             const data = yield response.json();
             setPredictions(data.predictions || []);

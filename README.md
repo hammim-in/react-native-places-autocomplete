@@ -33,7 +33,6 @@ export default function App() {
   return (
       <PlacesAutocomplete
         query={{
-          key: 'YOUR_GOOGLE_API_KEY', // Required
           language: 'en',              // Optional
           components: 'country:us',    // Optional
         }}
@@ -41,6 +40,7 @@ export default function App() {
         onPress={(data) => {
           console.log('Selected Place:', data);
         }}
+        apiKey='YOUR_GOOGLE_API_KEY' // Required
       />
   );
 }
@@ -49,7 +49,8 @@ export default function App() {
 
 | Prop Name | Type | Required | Description |
 |:----------|:-----|:---------|:------------|
-| `query` | `Query` | ✅ Yes | Google Places API query configuration. Must include at least the API `key`. |
+| `apiKey` | `string` | ✅ Yes | Google Places API query configuration. Must include at least the API `key`. |
+| `query` | `Query` |  ❌ No | Optional to filter search ressult. |
 | `placeholder` | `string` | ❌ No | Placeholder text for the search input. Defaults to `"Search for places"`. |
 | `onPress` | `(data: GooglePlaceData) => void` | ❌ No | Callback function triggered when a place is selected. |
 
@@ -59,7 +60,6 @@ The `query` prop expects an object with the following structure:
 
 | Key | Type | Required | Description |
 |:----|:-----|:---------|:------------|
-| `key` | `string` | ✅ Yes | Your Google Places API Key. |
 | `language` | `string` | ❌ No | Preferred language for results. Example: `'en'`, `'fr'`. |
 | `components` | `string` | ❌ No | Restrict results to a specific country. Example: `'country:us'`. |
 | `sessiontoken` | `string` | ❌ No | (Optional) Session token for billing optimization. |
@@ -99,7 +99,6 @@ interface GooglePlaceData {
 }
 
 interface Query {
-  key: string;
   sessiontoken?: string;
   offset?: number;
   location?: string;
@@ -121,7 +120,7 @@ interface Query {
 |:-------------|:---------------|
 | ![Input Example](link-to-image-1) | ![Result Example](link-to-image-2) |
 
-_👉 (Add your screenshots here when you publish.)_
+```
 
 ## 📄 License
 
