@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 interface GooglePlacePrediction {
     description: string;
     place_id: string;
@@ -16,8 +16,8 @@ interface PlacesQuery {
     strictbounds?: boolean;
 }
 interface PlacesAutocompleteProps {
-    query: PlacesQuery;
     apiKey: string;
+    query?: PlacesQuery;
     placeholder?: string;
     minLength?: number;
     debounce?: number;

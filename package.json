@@ -1,11 +1,11 @@
 {
   "name": "@hammim-in/react-native-places-autocomplete",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "main": "dist/PlacesAutocomplete.js",
   "types": "dist/PlacesAutocomplete.d.ts",
   "scripts": {
     "build": "tsc",
-    "publish":"npm run build && npm publish --access public"
+    "deploy": "npm run build && npm publish --access public"
   },
   "keywords": [
     "react-native",
@@ -22,8 +22,9 @@
   },
   "author": "Ham Mim",
   "license": "MIT",
-  "dependencies": {
-    "react": "^19.1.0"
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-native": ">=0.79.0"
   },
   "devDependencies": {
     "@types/react": "^19.1.2",

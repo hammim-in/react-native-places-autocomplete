@@ -7,13 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import React, { useState, useRef } from 'react';
+import * as React from 'react';
 import { View, TextInput, FlatList, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 const PlacesAutocomplete = ({ query, apiKey, placeholder = 'Search places...', minLength = 3, debounce = 500, onPlaceSelected, }) => {
-    const [inputText, setInputText] = useState('');
-    const [predictions, setPredictions] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const typingTimeout = useRef(null);
+    const [inputText, setInputText] = React.useState('');
+    const [predictions, setPredictions] = React.useState([]);
+    const [loading, setLoading] = React.useState(false);
+    const typingTimeout = React.useRef(null);
     const fetchPredictions = (text) => __awaiter(void 0, void 0, void 0, function* () {
         if (text.length < minLength) {
             setPredictions([]);
